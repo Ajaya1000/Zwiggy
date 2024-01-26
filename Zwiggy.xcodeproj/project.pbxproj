@@ -9,18 +9,40 @@
 /* Begin PBXBuildFile section */
 		A531AE912B615005006DABBE /* ZwiggyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AE902B615005006DABBE /* ZwiggyApp.swift */; };
 		A531AE932B615005006DABBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AE922B615005006DABBE /* ContentView.swift */; };
-		A531AE952B615005006DABBE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AE942B615005006DABBE /* Item.swift */; };
 		A531AE972B615006006DABBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A531AE962B615006006DABBE /* Assets.xcassets */; };
 		A531AE9A2B615006006DABBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A531AE992B615006006DABBE /* Preview Assets.xcassets */; };
+		A531AEA22B6183C1006DABBE /* InstamartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEA12B6183C1006DABBE /* InstamartView.swift */; };
+		A531AEA52B61886A006DABBE /* SubtitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEA42B61886A006DABBE /* SubtitleModifier.swift */; };
+		A531AEA82B629A94006DABBE /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEA72B629A94006DABBE /* Header.swift */; };
+		A531AEAB2B629B0C006DABBE /* InstamartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEAA2B629B0C006DABBE /* InstamartViewModel.swift */; };
+		A531AEAE2B629E47006DABBE /* CardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEAD2B629E47006DABBE /* CardModifier.swift */; };
+		A531AEB02B62D633006DABBE /* AdsCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEAF2B62D633006DABBE /* AdsCategoriesView.swift */; };
+		A531AEB32B62DBC0006DABBE /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEB22B62DBC0006DABBE /* View+Extension.swift */; };
+		A531AEB52B63C0FE006DABBE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEB42B63C0FE006DABBE /* Color+Extension.swift */; };
+		A531AEB72B63D5EC006DABBE /* QuickPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEB62B63D5EC006DABBE /* QuickPickView.swift */; };
+		A531AEB92B63D617006DABBE /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEB82B63D617006DABBE /* ItemView.swift */; };
+		A531AEBB2B63D717006DABBE /* CategoryViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEBA2B63D717006DABBE /* CategoryViewItem.swift */; };
+		A531AEBD2B63DC71006DABBE /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531AEBC2B63DC71006DABBE /* CategoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A531AE8D2B615005006DABBE /* Zwiggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zwiggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A531AE902B615005006DABBE /* ZwiggyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZwiggyApp.swift; sourceTree = "<group>"; };
 		A531AE922B615005006DABBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A531AE942B615005006DABBE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A531AE962B615006006DABBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A531AE992B615006006DABBE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A531AEA12B6183C1006DABBE /* InstamartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamartView.swift; sourceTree = "<group>"; };
+		A531AEA42B61886A006DABBE /* SubtitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleModifier.swift; sourceTree = "<group>"; };
+		A531AEA72B629A94006DABBE /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		A531AEAA2B629B0C006DABBE /* InstamartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamartViewModel.swift; sourceTree = "<group>"; };
+		A531AEAD2B629E47006DABBE /* CardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModifier.swift; sourceTree = "<group>"; };
+		A531AEAF2B62D633006DABBE /* AdsCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCategoriesView.swift; sourceTree = "<group>"; };
+		A531AEB22B62DBC0006DABBE /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		A531AEB42B63C0FE006DABBE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		A531AEB62B63D5EC006DABBE /* QuickPickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickPickView.swift; sourceTree = "<group>"; };
+		A531AEB82B63D617006DABBE /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		A531AEBA2B63D717006DABBE /* CategoryViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewItem.swift; sourceTree = "<group>"; };
+		A531AEBC2B63DC71006DABBE /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +75,12 @@
 		A531AE8F2B615005006DABBE /* Zwiggy */ = {
 			isa = PBXGroup;
 			children = (
+				A531AEB12B62DBB2006DABBE /* Utils */,
+				A531AEA62B629A7C006DABBE /* Views */,
+				A531AEA32B618854006DABBE /* ViewModifiers */,
+				A531AEA02B6183AD006DABBE /* Screens */,
 				A531AE902B615005006DABBE /* ZwiggyApp.swift */,
 				A531AE922B615005006DABBE /* ContentView.swift */,
-				A531AE942B615005006DABBE /* Item.swift */,
 				A531AE962B615006006DABBE /* Assets.xcassets */,
 				A531AE982B615006006DABBE /* Preview Content */,
 			);
@@ -68,6 +93,54 @@
 				A531AE992B615006006DABBE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A531AEA02B6183AD006DABBE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A531AEA92B629AE9006DABBE /* Instamart */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A531AEA32B618854006DABBE /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				A531AEA42B61886A006DABBE /* SubtitleModifier.swift */,
+				A531AEAD2B629E47006DABBE /* CardModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		A531AEA62B629A7C006DABBE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A531AEA72B629A94006DABBE /* Header.swift */,
+				A531AEAF2B62D633006DABBE /* AdsCategoriesView.swift */,
+				A531AEB62B63D5EC006DABBE /* QuickPickView.swift */,
+				A531AEB82B63D617006DABBE /* ItemView.swift */,
+				A531AEBA2B63D717006DABBE /* CategoryViewItem.swift */,
+				A531AEBC2B63DC71006DABBE /* CategoriesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A531AEA92B629AE9006DABBE /* Instamart */ = {
+			isa = PBXGroup;
+			children = (
+				A531AEA12B6183C1006DABBE /* InstamartView.swift */,
+				A531AEAA2B629B0C006DABBE /* InstamartViewModel.swift */,
+			);
+			path = Instamart;
+			sourceTree = "<group>";
+		};
+		A531AEB12B62DBB2006DABBE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A531AEB22B62DBC0006DABBE /* View+Extension.swift */,
+				A531AEB42B63C0FE006DABBE /* Color+Extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +213,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A531AEA82B629A94006DABBE /* Header.swift in Sources */,
+				A531AEB52B63C0FE006DABBE /* Color+Extension.swift in Sources */,
+				A531AEA52B61886A006DABBE /* SubtitleModifier.swift in Sources */,
+				A531AEBB2B63D717006DABBE /* CategoryViewItem.swift in Sources */,
+				A531AEAE2B629E47006DABBE /* CardModifier.swift in Sources */,
+				A531AEB02B62D633006DABBE /* AdsCategoriesView.swift in Sources */,
+				A531AEAB2B629B0C006DABBE /* InstamartViewModel.swift in Sources */,
 				A531AE932B615005006DABBE /* ContentView.swift in Sources */,
-				A531AE952B615005006DABBE /* Item.swift in Sources */,
+				A531AEBD2B63DC71006DABBE /* CategoriesView.swift in Sources */,
+				A531AEB92B63D617006DABBE /* ItemView.swift in Sources */,
+				A531AEA22B6183C1006DABBE /* InstamartView.swift in Sources */,
+				A531AEB32B62DBC0006DABBE /* View+Extension.swift in Sources */,
 				A531AE912B615005006DABBE /* ZwiggyApp.swift in Sources */,
+				A531AEB72B63D5EC006DABBE /* QuickPickView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
