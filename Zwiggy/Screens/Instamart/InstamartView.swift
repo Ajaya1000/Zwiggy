@@ -21,7 +21,7 @@ struct InstamartView: View {
                 VStack(alignment: .leading, spacing: 12.0) {
                     AdsCategoriesView()
                     QuickPickView()
-                    CategoriesView()
+                    CategoriesView(data: viewModel.categories!)
                 }
             }
         }

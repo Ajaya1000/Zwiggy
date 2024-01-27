@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct CategoryViewItem: View {
-    var backgroundColor: UIColor
-    var description: String?
+    var backgroundColor: (any Shape)? = nil
+    var description: String? = nil
     var title: String
     var image: UIImage
     
     var body: some View {
         VStack(alignment: .center) {
             ZStack {
-                Color(uiColor: backgroundColor)
+                Background()
                 Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                 Group {
                     if let description {
                         VStack {
@@ -51,6 +53,23 @@ struct CategoryViewItem: View {
     }
 }
 
+extension CategoryViewItem {
+    @ViewBuilder func Background() -> some View {
+        if let backgroundColor {
+            AnyView(backgroundColor)
+        } else {
+            LinearGradient(
+                stops: [
+                    Gradient.Stop(color: Color(red: 0.46, green: 0.69, blue: 0.9).opacity(0), location: 0.00),
+                    Gradient.Stop(color: Color(red: 0.41, green: 0.57, blue: 0.77), location: 1.00),
+                ],
+                startPoint: UnitPoint(x: 0.5, y: 0),
+                endPoint: UnitPoint(x: 0.5, y: 1)
+            )
+        }
+    }
+}
+
 #Preview {
-    CategoryViewItem(backgroundColor: .magenta, description: nil, title: "Cooking Essential", image: .init(systemName: "play.circle.fill")!)
+    CategoryViewItem(description: nil, title: "Cooking Essential", image: .apple)
 }

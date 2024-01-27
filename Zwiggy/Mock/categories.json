@@ -1,0 +1,35 @@
+{
+    "title": "Shop By Category",
+    "data": [
+        {
+            "id": "1",
+            "image": "vegetable",
+            "title": "Fresh Vegetables",
+            "items": []
+        },
+        {
+            "id": "2",
+            "image": "Britannia-bread",
+            "title": "Breads, Milk and Eggs",
+            "items": []
+        },
+        {
+            "id": "3",
+            "image": "fruit",
+            "title": "Fresh Fruits",
+            "items": []
+        },
+        {
+            "id": "4",
+            "image": "fortune-basmati",
+            "title": "Rice, Atta and Dals",
+            "items": []
+        },
+        {
+            "id": "5",
+            "image": "mtr-masala-garam-masala",
+            "title": "Masala & Dry fruits",
+            "items": []
+        }
+    ]
+}

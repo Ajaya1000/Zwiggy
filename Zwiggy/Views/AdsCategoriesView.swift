@@ -15,7 +15,7 @@ struct AdsCategoriesView: View {
                       alignment: .top,
                       spacing: 18.0) {
                 ForEach(list, id: \.self) { i in
-                    CategoryViewItem(backgroundColor: .magenta, description: "up to 60% off", title: "Cooking Essential \(i)", image: .init(systemName: "play.circle.fill")!)
+                    CategoryViewItem(description: "up to 60% off", title: "Cooking Essential \(i)", image: .init(systemName: "play.circle.fill")!)
                 }
             }
         }
