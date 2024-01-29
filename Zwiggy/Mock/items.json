@@ -1,11 +1,243 @@
 {
   "data": [
     {
-      "image": "",
-      "title": "",
-      "quantity": "",
-      "discountedPrice": "",
-      "originalPrice": ""
+      "id": "1",
+      "image": "Britannia-bread",
+      "title": "Bread",
+      "quantity": "200 gm",
+      "discountedPrice": "₹45",
+      "originalPrice": "₹55"
+    },
+    {
+      "id": "2",
+      "image": "egg-6",
+      "title": "Egg",
+      "quantity": "6 Pieces",
+      "discountedPrice": "₹50",
+      "originalPrice": "₹70"
+    },
+    {
+      "id": "3",
+      "image": "eggs-12",
+      "title": "Eggs",
+      "quantity": "12 Pieces",
+      "discountedPrice": "₹90",
+      "originalPrice": "₹120"
+    },
+    {
+      "id": "4",
+      "image": "nandini-milk",
+      "title": "Nandini Milk",
+      "quantity": "1 Litre",
+      "discountedPrice": "₹30",
+      "originalPrice": "₹40"
+    },
+    {
+      "id": "5",
+      "image": "paneer",
+      "title": "Paneer",
+      "quantity": "200 gm",
+      "discountedPrice": "₹70",
+      "originalPrice": "₹90"
+    },
+    {
+      "id": "6",
+      "image": "apple",
+      "title": "Apple",
+      "quantity": "1 Kg",
+      "discountedPrice": "₹80",
+      "originalPrice": "₹100"
+    },
+    {
+      "id": "7",
+      "image": "grape",
+      "title": "Grape",
+      "quantity": "500 gm",
+      "discountedPrice": "₹60",
+      "originalPrice": "₹75"
+    },
+    {
+      "id": "8",
+      "image": "mango",
+      "title": "Mango",
+      "quantity": "4 Pieces",
+      "discountedPrice": "₹100",
+      "originalPrice": "₹120"
+    },
+    {
+      "id": "9",
+      "image": "pineapple",
+      "title": "Pineapple",
+      "quantity": "1 Piece",
+      "discountedPrice": "₹60",
+      "originalPrice": "₹80"
+    },
+    {
+      "id": "10",
+      "image": "strawberry",
+      "title": "Strawberry",
+      "quantity": "250 gm",
+      "discountedPrice": "₹100",
+      "originalPrice": "₹120"
+    },
+    {
+      "id": "11",
+      "image": "mtr-masala-garam-masala",
+      "title": "MTR Garam Masala",
+      "quantity": "200 gm",
+      "discountedPrice": "₹50",
+      "originalPrice": "₹60"
+    },
+    {
+      "id": "12",
+      "image": "ss-tandoori-masala",
+      "title": "SS Tandoori Masala",
+      "quantity": "100 gm",
+      "discountedPrice": "₹40",
+      "originalPrice": "₹50"
+    },
+    {
+      "id": "13",
+      "image": "tata_chat_masala",
+      "title": "Tata Chat Masala",
+      "quantity": "100 gm",
+      "discountedPrice": "₹35",
+      "originalPrice": "₹45"
+    },
+    {
+      "id": "14",
+      "image": "tata_dal_tadka",
+      "title": "Tata Dal Tadka",
+      "quantity": "200 gm",
+      "discountedPrice": "₹40",
+      "originalPrice": "₹55"
+    },
+    {
+      "id": "15",
+      "image": "Tata-Sampann-Coriander-Powder-500g",
+      "title": "Tata Sampann Coriander Powder",
+      "quantity": "500 gm",
+      "discountedPrice": "₹70",
+      "originalPrice": "₹90"
+    },
+    {
+      "id": "16",
+      "image": "tata-sampann-garam-masala",
+      "title": "Tata Sampann Garam Masala",
+      "quantity": "200 gm",
+      "discountedPrice": "₹55",
+      "originalPrice": "₹65"
+    },
+    {
+      "id": "17",
+      "image": "Tata-SampannSambar-Masala-100g",
+      "title": "Tata Sampann Sambar Masala",
+      "quantity": "100 gm",
+      "discountedPrice": "₹30",
+      "originalPrice": "₹40"
+    },
+    {
+      "id": "18",
+      "image": "fortune-basmati",
+      "title": "Fortune Basmati Rice",
+      "quantity": "1 Kg",
+      "discountedPrice": "₹120",
+      "originalPrice": "₹150"
+    },
+    {
+      "id": "19",
+      "image": "indian-gate-rice",
+      "title": "Indian Gate Rice",
+      "quantity": "1 Kg",
+      "discountedPrice": "₹80",
+      "originalPrice": "₹100"
+    },
+    {
+      "id": "20",
+      "image": "tata-Chana-Kala",
+      "title": "Tata Chana Kala",
+      "quantity": "500 gm",
+      "discountedPrice": "₹60",
+      "originalPrice": "₹80"
+    },
+    {
+      "id": "21",
+      "image": "tata-sampann-organic-urad-dal",
+      "title": "Tata Sampann Organic Urad Dal",
+      "quantity": "500 gm",
+      "discountedPrice": "₹70",
+      "originalPrice": "₹90"
+    },
+    {
+      "id": "22",
+      "image": "tata-sampann-toor-dal-500",
+      "title": "Tata Sampann Toor Dal",
+      "quantity": "500 gm",
+      "discountedPrice": "₹60",
+      "originalPrice": "₹75"
+    },
+    {
+      "id": "23",
+      "image": "Tata-Sampann-Toor-Dal",
+      "title": "Tata Sampann Toor Dal",
+      "quantity": "1 Kg",
+      "discountedPrice": "₹100",
+      "originalPrice": "₹120"
+    },
+    {
+      "id": "24",
+      "image": "broccoli",
+      "title": "Broccoli",
+      "quantity": "500 gm",
+      "discountedPrice": "₹40"
+    },
+    {
+      "id": "25",
+      "image": "cabbage",
+      "title": "Cabbage",
+      "quantity": "1 Piece",
+      "discountedPrice": "₹20",
+      "originalPrice": "₹30"
+    },
+    {
+      "id": "26",
+      "image": "carrot",
+      "title": "Carrot",
+      "quantity": "500 gm",
+      "discountedPrice": "₹15",
+      "originalPrice": "₹20"
+    },
+    {
+      "id": "27",
+      "image": "eggplant",
+      "title": "Eggplant",
+      "quantity": "500 gm",
+      "discountedPrice": "₹25",
+      "originalPrice": "₹35"
+    },
+    {
+      "id": "28",
+      "image": "potato",
+      "title": "Potato",
+      "quantity": "1 Kg",
+      "discountedPrice": "₹30",
+      "originalPrice": "₹40"
+    },
+    {
+      "id": "29",
+      "image": "red_chili",
+      "title": "Red Chili",
+      "quantity": "100 gm",
+      "discountedPrice": "₹10",
+      "originalPrice": "₹15"
+    },
+    {
+      "id": "30",
+      "image": "tamato",
+      "title": "Tomato",
+      "quantity": "1 Kg",
+      "discountedPrice": "₹25",
+      "originalPrice": "₹30"
     }
   ]
 }

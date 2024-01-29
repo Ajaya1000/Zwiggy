@@ -10,6 +10,8 @@ import SwiftUI
 struct CategoriesView: View {
     var data: CategoryList
     
+    @Environment(InstamartViewModel.self) var viewModel: InstamartViewModel
+    
     let gridLayout = [GridItem(.fixed(100), spacing: 24.0, alignment: .leading),
                       GridItem(.fixed(100), spacing: 24.0, alignment: .center),
                       GridItem(.fixed(100), spacing: 24.0, alignment: .trailing)]
@@ -25,6 +27,9 @@ struct CategoriesView: View {
                         CategoryViewItem(description: nil,
                                          title: i.title.nilCoalascing(""),
                                          image: .init(named: i.image.nilCoalascing("")).nilCoalascing(.apple))
+                        .onTapGesture {
+                            viewModel.navigationPath.append(i)
+                        }
                     }
             }
             } else {
@@ -34,7 +39,3 @@ struct CategoriesView: View {
     }
 }
 
-
-#Preview {
-    CategoriesView(data: Zutil.readJson("categories")!)
-}

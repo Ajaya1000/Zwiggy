@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CategoryItem: Decodable, Identifiable {
+struct CategoryItem: Decodable, Identifiable, Hashable {
     var id: String
     var image: String?
     var title: String?

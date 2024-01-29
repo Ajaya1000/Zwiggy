@@ -11,24 +11,30 @@ struct InstamartView: View {
     @Bindable var viewModel = InstamartViewModel()
     
     var body: some View {
-        VStack {
-            Header(adressTag: "Home",
-                   icon: "house",
-                   addressName: "#17 Shree Nilayam, Choodasandra, Bangalore",
-                   searchText: $viewModel.searchText)
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 12.0) {
-                    AdsCategoriesView()
-                    QuickPickView()
-                    CategoriesView(data: viewModel.categories!)
+        NavigationStack(path: $viewModel.navigationPath) {
+            VStack {
+                Header(adressTag: "Home",
+                       icon: "house",
+                       addressName: "#17 Shree Nilayam, Choodasandra, Bangalore",
+                       searchText: $viewModel.searchText)
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 12.0) {
+                        AdsCategoriesView()
+                        QuickPickView()
+                        CategoriesView(data: viewModel.categories!)
+                    }
                 }
             }
+            .padding(.horizontal)
+            .background(
+                background
+            )
+            .navigationDestination(for: CategoryItem.self) { item in
+                CategoryDetailView(data: item)
+            }
         }
-        .padding(.horizontal)
-        .background(
-            background
-        )
+        .environment(viewModel)
     }
 }
 

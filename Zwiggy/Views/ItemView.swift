@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ItemView: View {
-    let image: UIImage
-    let title: String
-    let quantity: String = "1 Kg"
-    let price: String = "$12"
-    let originalPrice: String? = "$15"
-    let addButtonType: AddButtonType
-    let discountText: String?
+    var image: String?
+    var title: String?
+    var quantity: String?
+    var price: String?
+    var originalPrice: String?
+    var discountText: String?
+    var addButtonType: AddButtonType
     
     var body: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading) {
                 ItemImage()
-                Text(title)
+                Text(title.nilCoalascing(""))
                     .font(.zDescription)
                     .lineLimit(2)
             }
@@ -28,7 +28,7 @@ struct ItemView: View {
             Spacer()
             
             VStack(alignment: .leading, spacing: 4.0) {
-                Text(quantity)
+                Text(quantity.nilCoalascing(""))
                     .font(.system(size: 14.0, weight: .thin))
                 
                 HStack(alignment: .bottom) {
@@ -38,7 +38,6 @@ struct ItemView: View {
                 }
             }
         }
-        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
         .padding(.init(top: 0, leading: 0, bottom: 2, trailing: 0))
     }
 }
@@ -47,7 +46,7 @@ extension ItemView {
     @ViewBuilder func ItemPriceView() -> some View {
         if addButtonType == .top {
             HStack(alignment: .bottom, spacing: 2.0) {
-                Text(price)
+                Text(price.nilCoalascing(""))
                     .font(.system(size: 14.0, weight: .medium))
                 
                 if let originalPrice {
@@ -68,7 +67,7 @@ extension ItemView {
                     EmptyView()
                 }
                 
-                Text(price)
+                Text(price.nilCoalascing(""))
                     .font(.system(size: 16.0, weight: .medium))
             }
         }
@@ -79,9 +78,9 @@ extension ItemView {
             Button(action: {} , label: {
                 Text("Add")
                     .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(Color.init(r: 18, g: 168, b: 94))
-                    .padding(.init(top: 2, leading: 8, bottom: 2, trailing: 8))
-                    .background(RoundedRectangle(cornerRadius: 4.0).stroke(Color.gray, lineWidth: 1.0))
+                    .foregroundStyle(Color.init(18, 168, 94))
+                    .padding(.init(top: 4.0, leading: 16.0, bottom: 4.0, trailing: 16.0))
+                    .background(RoundedRectangle(cornerRadius: 4.0).stroke(Color.zGray, lineWidth: 1.0))
             })
         } else {
             EmptyView()
@@ -89,7 +88,8 @@ extension ItemView {
     }
     
     @ViewBuilder func ItemImage() -> some View {
-        Image(uiImage: image)
+        Image(uiImage: UIImage(named: image.nilCoalascing("")).nilCoalascing(.vegetable))
+            .resizable()
             .frame(width: 100, height: 100)
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 12.0, style: .circular))
