@@ -12,8 +12,8 @@ struct Item: Decodable, Identifiable, Hashable {
     var image: String?
     var title: String?
     var quantity: String?
-    var discountedPrice: String?
-    var originalPrice: String?
+    var discountedPrice: Double?
+    var originalPrice: Double?
     var discountDescription: String?
 }
 

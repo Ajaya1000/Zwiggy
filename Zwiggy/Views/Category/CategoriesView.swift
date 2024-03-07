@@ -28,7 +28,7 @@ struct CategoriesView: View {
                                          title: i.title.nilCoalascing(""),
                                          image: .init(named: i.image.nilCoalascing("")).nilCoalascing(.apple))
                         .onTapGesture {
-                            viewModel.navigationPath.append(i)
+                            viewModel.navigationPath.append(.categoryDetail(item: i))
                         }
                     }
             }

@@ -22,12 +22,7 @@ struct QuickPickView: View {
                           alignment: .top,
                           spacing: 18.0) {
                     ForEach(viewModel.getQuickPickItemDataList()) { item in
-                        ItemView(image: item.image,
-                                 title: item.title,
-                                 quantity: item.quantity,
-                                 price: item.discountedPrice,
-                                 originalPrice: item.originalPrice,
-                                 discountText: item.discountDescription,
+                        ItemView(item: item,
                                  addButtonType: .top)
                         .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                         .padding(.init(top: 0, leading: 0, bottom: 8.0, trailing: 0))

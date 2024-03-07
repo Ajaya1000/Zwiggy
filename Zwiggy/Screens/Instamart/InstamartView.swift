@@ -11,30 +11,39 @@ struct InstamartView: View {
     @Bindable var viewModel = InstamartViewModel()
     
     var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
-            VStack {
-                Header(adressTag: "Home",
-                       icon: "house",
-                       addressName: "#17 Shree Nilayam, Choodasandra, Bangalore",
-                       searchText: $viewModel.searchText)
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 12.0) {
-                        AdsCategoriesView()
-                        QuickPickView()
-                        CategoriesView(data: viewModel.categories!)
+        ZStack(alignment: .bottom) {
+            NavigationStack(path: $viewModel.navigationPath) {
+                VStack() {
+                    Header(adressTag: "Home",
+                           icon: "house",
+                           addressName: "#17 Shree Nilayam, Choodasandra, Bangalore",
+                           searchText: $viewModel.searchText)
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(alignment: .leading, spacing: 12.0) {
+                            AdsCategoriesView()
+                            QuickPickView()
+                            CategoriesView(data: viewModel.categories!)
+                        }
+                        .padding(.top, 8)
+                        .padding(.bottom, viewModel.isCartVisible ? 100 : 0)
                     }
                 }
+                .padding(.horizontal)
+                .background(
+                    background
+                )
+                .navigationDestination(for: Screen.self) { ScreenItem in
+                    ScreenItem.BuildScreen()
+                }
             }
-            .padding(.horizontal)
-            .background(
-                background
-            )
-            .navigationDestination(for: CategoryItem.self) { item in
-                CategoryDetailView(data: item)
+            
+            if viewModel.isCartVisible {
+                CartBottomStickyView()
             }
         }
         .environment(viewModel)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
@@ -51,6 +60,6 @@ extension InstamartView {
     }
 }
 
-#Preview {
-    InstamartView()
-}
+//#Preview {
+//    InstamartView()
+//}

@@ -17,20 +17,14 @@ struct CategoryDetailView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 1.0) {
                 ForEach(viewModel.getItem(for: data.items)) { item in
-                    ItemView(
-                        image: item.image,
-                        title: item.title,
-                        quantity: item.quantity,
-                        price: item.discountedPrice,
-                        originalPrice: item.originalPrice,
-                        discountText: item.discountDescription,
-                        addButtonType: .bottom
-                    )
+                    ItemView(item: item,
+                             addButtonType: .bottom)
                     .padding(24.0)
                     .background(.white)
                 }
             }
             .padding(2.0)
+            .padding(.bottom, viewModel.isCartVisible ? 100 : 0)
         }
         .background(Color.zGray1)
         .navigationBarBackButtonHidden()

@@ -8,19 +8,16 @@
 import SwiftUI
 
 struct ItemView: View {
-    var image: String?
-    var title: String?
-    var quantity: String?
-    var price: String?
-    var originalPrice: String?
-    var discountText: String?
+    var item: Item
     var addButtonType: AddButtonType
+    
+    @Environment(InstamartViewModel.self) var viewModel: InstamartViewModel
     
     var body: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading) {
                 ItemImage()
-                Text(title.nilCoalascing(""))
+                Text(item.title.nilCoalascing(""))
                     .font(.zDescription)
                     .lineLimit(2)
             }
@@ -28,7 +25,7 @@ struct ItemView: View {
             Spacer()
             
             VStack(alignment: .leading, spacing: 4.0) {
-                Text(quantity.nilCoalascing(""))
+                Text(item.quantity.nilCoalascing(""))
                     .font(.system(size: 14.0, weight: .thin))
                 
                 HStack(alignment: .bottom) {
@@ -46,11 +43,11 @@ extension ItemView {
     @ViewBuilder func ItemPriceView() -> some View {
         if addButtonType == .top {
             HStack(alignment: .bottom, spacing: 2.0) {
-                Text(price.nilCoalascing(""))
+                Text(item.discountedPrice.nilCoalascing(0).toCurrencyString())
                     .font(.system(size: 14.0, weight: .medium))
                 
-                if let originalPrice {
-                    Text(originalPrice)
+                if let originalPrice = item.originalPrice {
+                    Text(originalPrice.toCurrencyString())
                         .strikethrough()
                         .font(.system(size: 10.0, weight: .light))
                 } else {
@@ -59,15 +56,15 @@ extension ItemView {
             }
         } else {
             VStack(alignment: .leading) {
-                if let originalPrice {
-                    Text(originalPrice)
+                if let originalPrice = item.originalPrice {
+                    Text(originalPrice.toCurrencyString())
                         .strikethrough()
                         .font(.system(size: 12.0, weight: .light))
                 } else {
                     EmptyView()
                 }
                 
-                Text(price.nilCoalascing(""))
+                Text(item.discountedPrice.nilCoalascing(0).toCurrencyString())
                     .font(.system(size: 16.0, weight: .medium))
             }
         }
@@ -75,7 +72,9 @@ extension ItemView {
     
     @ViewBuilder func BottomAddButton() -> some View {
         if addButtonType == .bottom {
-            Button(action: {} , label: {
+            Button(action: {
+                viewModel.addToCart(item: item)
+            } , label: {
                 Text("Add")
                     .font(.system(size: 14, weight: .bold))
                     .foregroundStyle(Color.init(18, 168, 94))
@@ -88,7 +87,7 @@ extension ItemView {
     }
     
     @ViewBuilder func ItemImage() -> some View {
-        Image(uiImage: UIImage(named: image.nilCoalascing("")).nilCoalascing(.vegetable))
+        Image(uiImage: UIImage(named: item.image.nilCoalascing("")).nilCoalascing(.vegetable))
             .resizable()
             .frame(width: 100, height: 100)
             .background(Color.white)
@@ -103,21 +102,25 @@ extension ItemView {
     
     @ViewBuilder func TopAddButton() -> some View {
         if addButtonType == .top {
-            Text("+")
-                .font(.system(size: 18.0, weight: .bold))
-                .foregroundStyle(Color.green)
-                .frame(width: 30, height: 30)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 4.0, style: .circular))
-                .background(RoundedRectangle(cornerRadius: 4.0, style: .circular).stroke(Color.gray))
-                .offset(x: 4,y: -4)
+            Button(action: {
+                viewModel.addToCart(item: item)
+            }) {
+                Text("+")
+                    .font(.system(size: 18.0, weight: .bold))
+                    .foregroundStyle(Color.green)
+                    .frame(width: 30, height: 30)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 4.0, style: .circular))
+                    .background(RoundedRectangle(cornerRadius: 4.0, style: .circular).stroke(Color.gray))
+                    .offset(x: 4,y: -4)
+            }
         } else {
             EmptyView()
         }
     }
     
     @ViewBuilder func DiscountBadge() -> some View {
-        if let discountText {
+        if let discountText = item.discountDescription {
             Text(discountText)
                 .foregroundStyle(Color.white)
                 .frame(width: 30, height: 30)
