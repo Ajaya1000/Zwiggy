@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct ItemView: View {
-    var item: Item
-    var addButtonType: AddButtonType
-    
-    @Environment(InstamartViewModel.self) var viewModel: InstamartViewModel
+    var viewModel: ItemViewModel
     
     var body: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading) {
                 ItemImage()
-                Text(item.title.nilCoalascing(""))
+                Text(viewModel.title)
                     .font(.zDescription)
                     .lineLimit(2)
             }
@@ -25,7 +22,7 @@ struct ItemView: View {
             Spacer()
             
             VStack(alignment: .leading, spacing: 4.0) {
-                Text(item.quantity.nilCoalascing(""))
+                Text(viewModel.quantity)
                     .font(.system(size: 14.0, weight: .thin))
                 
                 HStack(alignment: .bottom) {
@@ -41,13 +38,13 @@ struct ItemView: View {
 
 extension ItemView {
     @ViewBuilder func ItemPriceView() -> some View {
-        if addButtonType == .top {
+        if viewModel.addButtonType == .top {
             HStack(alignment: .bottom, spacing: 2.0) {
-                Text(item.discountedPrice.nilCoalascing(0).toCurrencyString())
+                Text(viewModel.discountedPrice)
                     .font(.system(size: 14.0, weight: .medium))
                 
-                if let originalPrice = item.originalPrice {
-                    Text(originalPrice.toCurrencyString())
+                if let originalPrice = viewModel.originalPrice {
+                    Text(originalPrice)
                         .strikethrough()
                         .font(.system(size: 10.0, weight: .light))
                 } else {
@@ -56,24 +53,24 @@ extension ItemView {
             }
         } else {
             VStack(alignment: .leading) {
-                if let originalPrice = item.originalPrice {
-                    Text(originalPrice.toCurrencyString())
+                if let originalPrice = viewModel.originalPrice {
+                    Text(originalPrice)
                         .strikethrough()
                         .font(.system(size: 12.0, weight: .light))
                 } else {
                     EmptyView()
                 }
                 
-                Text(item.discountedPrice.nilCoalascing(0).toCurrencyString())
+                Text(viewModel.discountedPrice)
                     .font(.system(size: 16.0, weight: .medium))
             }
         }
     }
     
     @ViewBuilder func BottomAddButton() -> some View {
-        if addButtonType == .bottom {
+        if viewModel.addButtonType == .bottom {
             Button(action: {
-                viewModel.addToCart(item: item)
+                viewModel.addItem()
             } , label: {
                 Text("Add")
                     .font(.system(size: 14, weight: .bold))
@@ -87,7 +84,7 @@ extension ItemView {
     }
     
     @ViewBuilder func ItemImage() -> some View {
-        Image(uiImage: UIImage(named: item.image.nilCoalascing("")).nilCoalascing(.vegetable))
+        Image(uiImage: viewModel.image)
             .resizable()
             .frame(width: 100, height: 100)
             .background(Color.white)
@@ -101,18 +98,13 @@ extension ItemView {
     }
     
     @ViewBuilder func TopAddButton() -> some View {
-        if addButtonType == .top {
+        if viewModel.addButtonType == .top {
             Button(action: {
-                viewModel.addToCart(item: item)
+                viewModel.addItem()
             }) {
-                Text("+")
-                    .font(.system(size: 18.0, weight: .bold))
-                    .foregroundStyle(Color.green)
-                    .frame(width: 30, height: 30)
-                    .background(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 4.0, style: .circular))
-                    .background(RoundedRectangle(cornerRadius: 4.0, style: .circular).stroke(Color.gray))
-                    .offset(x: 4,y: -4)
+                AddItemButtonView(addedItemCount: viewModel.itemCartCount,
+                                  onAddition: viewModel.addItem,
+                                  onRemove: viewModel.removeItem)
             }
         } else {
             EmptyView()
@@ -120,7 +112,7 @@ extension ItemView {
     }
     
     @ViewBuilder func DiscountBadge() -> some View {
-        if let discountText = item.discountDescription {
+        if let discountText = viewModel.discountDescription {
             Text(discountText)
                 .foregroundStyle(Color.white)
                 .frame(width: 30, height: 30)
@@ -131,12 +123,5 @@ extension ItemView {
         } else {
             EmptyView()
         }
-    }
-}
-
-extension ItemView {
-    enum AddButtonType {
-        case top
-        case bottom
     }
 }

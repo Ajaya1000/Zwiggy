@@ -13,7 +13,7 @@ enum Screen: Hashable {
 }
 
 extension Screen {
-    @ViewBuilder func BuildScreen() -> some View {
+    @ViewBuilder func build() -> some View {
         switch self {
         case .cart:
             CartView()
@@ -25,11 +25,10 @@ extension Screen {
 
 extension Screen {
     var shouldShowCart: Bool {
-        switch self {
-        case .categoryDetail(_):
-            true
-        default:
-            false
+        if self == .cart {
+            return false
         }
+        
+        return true
     }
 }

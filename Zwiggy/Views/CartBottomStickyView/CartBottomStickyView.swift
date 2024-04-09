@@ -20,7 +20,7 @@ struct CartBottomStickyView: View {
                 viewModel.navigationPath.append(.cart)
             }) {
                 HStack(alignment: .center) {
-                    Text("\(viewModel.getAddedItemCount()) Items")
+                    Text("\(viewModel.getTotalAddedItemCount()) Items")
                     
                     Divider()
                         .frame(minWidth: 2)

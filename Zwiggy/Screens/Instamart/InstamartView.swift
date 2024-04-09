@@ -33,8 +33,8 @@ struct InstamartView: View {
                 .background(
                     background
                 )
-                .navigationDestination(for: Screen.self) { ScreenItem in
-                    ScreenItem.BuildScreen()
+                .navigationDestination(for: Screen.self) { Screen in
+                    Screen.build()
                 }
             }
             

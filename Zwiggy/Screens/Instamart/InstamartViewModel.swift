@@ -53,7 +53,7 @@ extension InstamartViewModel {
 
 extension InstamartViewModel {
     var isCartVisible: Bool {
-        guard getAddedItemCount() > 0 else {
+        guard getTotalAddedItemCount() > 0 else {
             return false
         }
         
@@ -84,8 +84,16 @@ extension InstamartViewModel {
         }
     }
     
-    func getAddedItemCount() -> Int {
+    func getTotalAddedItemCount() -> Int {
         selectedItems.reduce(0) { $0 + $1.value}
+    }
+    
+    func getAddedItemCount(for item: Item) -> Int {
+        guard let id = item.id else {
+            return 0
+        }
+        
+        return selectedItems[id].nilCoalascing(0)
     }
     
     func getSelectedItemList() -> [SelectedItem] {
