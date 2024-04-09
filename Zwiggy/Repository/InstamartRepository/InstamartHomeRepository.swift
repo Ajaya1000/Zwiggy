@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class InstamartHomeRepository {
+    private var cartService: InstamartCartService
+    
+    init(cartService: InstamartCartService) {
+        self.cartService = cartService
+    }
+}
+
+extension InstamartHomeRepository {
+    
+}
