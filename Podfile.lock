@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 7079ab5c46e5d8edba58cb670325de1280cf565c
+PODS:
+  - SwiftDataStorage (0.0.1)
+
+DEPENDENCIES:
+  - SwiftDataStorage (from `../devPod/SwiftDataStorage`)
+
+EXTERNAL SOURCES:
+  SwiftDataStorage:
+    :path: "../devPod/SwiftDataStorage"
+
+SPEC CHECKSUMS:
+  SwiftDataStorage: c7657347013eb1ed85b236b6e2af119e7ba7afb5
+
+PODFILE CHECKSUM: 35b6bdc5aabad3927e84db5c38209cff56561a3a
 
 COCOAPODS: 1.15.2
