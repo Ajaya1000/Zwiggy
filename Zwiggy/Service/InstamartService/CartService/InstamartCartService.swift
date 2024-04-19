@@ -5,8 +5,12 @@
 //  Created by Ajaya Mati on 07/04/24.
 //
 
-import Foundation
+import SwiftUI
 
-protocol InstamartCartService {
+protocol InstamartCartService: Observation.Observable {
+    var items: [SelectedItem] { get }
     
+    func add(item: Item)
+    
+    func remove(item: Item)
 }
