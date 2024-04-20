@@ -30,7 +30,7 @@ extension LocalCartDatsource {
     }
     
     func remove(item: Item) {
-        if selectedItems[item] == 1 {
+        if selectedItems[item].nilCoalascing(0) <= 1 {
             selectedItems.removeValue(forKey: item)
         } else {
             selectedItems[item] = selectedItems[item].nilCoalascing(0) - 1

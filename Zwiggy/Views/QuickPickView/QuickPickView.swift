@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QuickPickView: View {
-    @Environment(InstamartViewModel.self) var viewModel: InstamartViewModel
+    var viewModel: QuickPickViewModel
     
     let gridLayout = [GridItem(), GridItem()]
     
@@ -21,7 +21,7 @@ struct QuickPickView: View {
                 LazyHGrid(rows: gridLayout,
                           alignment: .top,
                           spacing: 18.0) {
-                    ForEach(viewModel.getQuickPickItemDataList()) { item in
+                    ForEach(viewModel.items) { item in
                         ItemView(viewModel: Factory.shared.viewModel.instamart.getItemViewModel(with: item,
                                                                                                 addButtonType: .top))
                         .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)

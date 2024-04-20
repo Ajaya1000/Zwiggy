@@ -12,14 +12,16 @@ class InstamartViewModel {
     var searchText: String = ""
     var categories: CategoryList?
     var itemList: ItemList?
-    var selectedItems: [String: Int] = [:]
+    private var repository: InstamartHomeRepository
     
     // NavigationPath
     var navigationPath: [Screen]
     
     private var quickPickItemList: [String] = []
     
-    init() {
+    init(repository: InstamartHomeRepository) {
+        self.repository = repository
+        
         self.categories = Zutil.readJson("categories")
         self.itemList = Zutil.readJson("items")
         self.navigationPath = []
@@ -65,45 +67,27 @@ extension InstamartViewModel {
     }
     
     func addToCart(item: Item) {
-        guard let id = item.id else {
-            return
-        }
-        
-        selectedItems[id] = selectedItems[id].nilCoalascing(0) + 1
+        repository.addToCart(item: item)
     }
     
     func removeFromCart(item: Item) {
-        guard let id = item.id else {
-            return
-        }
-        
-        if selectedItems[id] == 1 {
-            selectedItems.removeValue(forKey: id)
-        } else {
-            selectedItems[id] = selectedItems[id].nilCoalascing(0) - 1
-        }
+        repository.removeFromCart(item: item)
     }
     
     func getTotalAddedItemCount() -> Int {
-        selectedItems.reduce(0) { $0 + $1.value}
+        repository.items.reduce(0) { $0 + $1.count }
     }
     
     func getAddedItemCount(for item: Item) -> Int {
-        guard let id = item.id else {
+        guard let selectedItem = repository.items.first(where: { $0.item == item }) else {
             return 0
         }
         
-        return selectedItems[id].nilCoalascing(0)
+        return selectedItem.count
     }
     
     func getSelectedItemList() -> [SelectedItem] {
-        selectedItems.compactMap({ key, value in
-            guard let item = getItem(for: key) else {
-                return nil
-            }
-                
-            return SelectedItem(count: value, item: item)
-        })
+        repository.items
     }
     
     func getTotalAmountInCart() -> String {

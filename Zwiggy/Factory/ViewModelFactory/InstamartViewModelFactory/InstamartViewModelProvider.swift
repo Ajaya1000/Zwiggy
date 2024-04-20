@@ -10,4 +10,6 @@ protocol InstamartViewModelProvider {
     
     func getItemViewModel(with item: Item,
                           addButtonType: ItemViewModel.AddButtonType) -> ItemViewModel
+    
+    func getQuickPickViewModel() -> QuickPickViewModel
 }

@@ -28,11 +28,11 @@ struct ItemViewModel {
 
 extension ItemViewModel {
     func addItem() {
-        repository.add(item: item)
+        repository.addToCart(item: item)
     }
     
     func removeItem() {
-        repository.remove(item: item)
+        repository.removeFromCart(item: item)
     }
 }
 
@@ -63,7 +63,11 @@ extension ItemViewModel {
     }
     
     var itemCartCount: Int {
-        repository.count(item: item)
+        guard let selectedItem = repository.items.first(where: { $0.item == item }) else {
+            return 0
+        }
+        
+        return selectedItem.count
     }
 }
 

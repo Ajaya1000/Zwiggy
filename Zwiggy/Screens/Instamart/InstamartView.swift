@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InstamartView: View {
-    @Bindable var viewModel = InstamartViewModel()
+    @Bindable var viewModel = Factory.shared.viewModel.instamart.getHomeViewModel()
     
     var body: some View {
         ZStack(alignment: .bottom) {

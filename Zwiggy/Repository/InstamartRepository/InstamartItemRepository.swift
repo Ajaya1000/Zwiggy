@@ -20,19 +20,15 @@ private extension InstamartItemRepository {
 
 // MARK: - Internal Methods
 extension InstamartItemRepository {
-    func add(item: Item) {
-        
+    var items: [SelectedItem] {
+        service.items
     }
     
-    func remove(item: Item) {
-        
+    func addToCart(item: Item) {
+        service.add(item: item)
     }
     
-    func fetchAll() -> [SelectedItem] {
-        return []
-    }
-    
-    func count(item: Item) -> Int {
-        return 0
+    func removeFromCart(item: Item) {
+        service.remove(item: item)
     }
 }

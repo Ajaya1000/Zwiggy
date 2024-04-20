@@ -7,4 +7,5 @@
 
 protocol InstamartServiceProvider {
     func getCartService() -> InstamartCartService
+    func getQuickPickService() -> InstamartQuickPickService
 }

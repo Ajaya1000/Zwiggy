@@ -18,7 +18,9 @@ struct AddItemButtonView: View {
         }
         .padding(.horizontal, 8.0)
         .padding(.vertical, 4.0)
+        .background(RoundedRectangle(cornerRadius: 8.0).fill(.white))
         .background(RoundedRectangle(cornerRadius: 8.0).stroke(Color.gray, lineWidth: 0.5))
+        
     }
 }
 

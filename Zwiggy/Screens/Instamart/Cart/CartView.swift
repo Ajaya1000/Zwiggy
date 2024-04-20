@@ -43,5 +43,5 @@ struct CartView: View {
 
 #Preview {
     CartView()
-        .environment(InstamartViewModel())
+        .environment(Factory.shared.viewModel.instamart.getHomeViewModel())
 }

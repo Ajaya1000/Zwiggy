@@ -9,4 +9,6 @@ import Foundation
 
 protocol InstamartRepositoryProvider {
     func getItemRepository() -> InstamartItemRepository
+    func getHomeRepository() -> InstamartHomeRepository
+    func getQuickPickRepository() -> InstamrtQuickPickRepository
 }

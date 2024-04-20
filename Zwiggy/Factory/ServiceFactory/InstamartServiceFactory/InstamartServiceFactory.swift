@@ -13,4 +13,9 @@ extension InstamartServiceFactory: InstamartServiceProvider {
     func getCartService() -> InstamartCartService {
         return InstamartLocalCartService()
     }
+    
+    func getQuickPickService() -> any InstamartQuickPickService {
+        return InstamartQuickPickLocalService()
+    }
+    
 }

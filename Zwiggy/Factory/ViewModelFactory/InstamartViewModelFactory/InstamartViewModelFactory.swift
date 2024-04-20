@@ -18,7 +18,7 @@ class InstamartViewModelFactory {
 extension InstamartViewModelFactory: InstamartViewModelProvider {
     func getHomeViewModel() -> InstamartViewModel {
         
-        return InstamartViewModel()
+        return InstamartViewModel(repository: repositoryProvider.getHomeRepository())
     }
     
     func getItemViewModel(with item: Item,

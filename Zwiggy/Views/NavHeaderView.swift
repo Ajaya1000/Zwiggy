@@ -28,5 +28,5 @@ struct NavHeaderView: View {
 
 #Preview {
     NavHeaderView()
-        .environment(InstamartViewModel())
+        .environment(Factory.shared.viewModel.instamart.getHomeViewModel())
 }

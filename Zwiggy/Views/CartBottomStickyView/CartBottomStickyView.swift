@@ -64,6 +64,6 @@ struct CartBottomStickyView: View {
         Color.red
         CartBottomStickyView()
     }
-    .environment(InstamartViewModel())
+    .environment(Factory.shared.viewModel.instamart.getHomeViewModel())
     .ignoresSafeArea()
 }
