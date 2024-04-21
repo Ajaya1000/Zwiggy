@@ -22,7 +22,7 @@ struct InstamartView: View {
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 12.0) {
                             AdsCategoriesView()
-                            QuickPickView()
+                            QuickPickView(viewModel: Factory.shared.viewModel.instamart.getQuickPickViewModel())
                             CategoriesView(data: viewModel.categories!)
                         }
                         .padding(.top, 8)

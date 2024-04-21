@@ -12,16 +12,14 @@ struct ItemView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            VStack(alignment: .leading) {
-                ItemImage()
-                Text(viewModel.title)
-                    .font(.zDescription)
-                    .lineLimit(2)
-            }
+            ItemImage()
             
             Spacer()
             
             VStack(alignment: .leading, spacing: 4.0) {
+                Text(viewModel.title)
+                    .font(.zDescription)
+                    .lineLimit(2)
                 Text(viewModel.quantity)
                     .font(.system(size: 14.0, weight: .thin))
                 
@@ -66,23 +64,7 @@ extension ItemView {
             }
         }
     }
-    
-    @ViewBuilder func BottomAddButton() -> some View {
-        if viewModel.addButtonType == .bottom {
-            Button(action: {
-                viewModel.addItem()
-            } , label: {
-                Text("Add")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(Color.init(18, 168, 94))
-                    .padding(.init(top: 4.0, leading: 16.0, bottom: 4.0, trailing: 16.0))
-                    .background(RoundedRectangle(cornerRadius: 4.0).stroke(Color.zGray, lineWidth: 1.0))
-            })
-        } else {
-            EmptyView()
-        }
-    }
-    
+        
     @ViewBuilder func ItemImage() -> some View {
         Image(uiImage: viewModel.image)
             .resizable()
@@ -99,13 +81,20 @@ extension ItemView {
     
     @ViewBuilder func TopAddButton() -> some View {
         if viewModel.addButtonType == .top {
-            Button(action: {
-                viewModel.addItem()
-            }) {
-                AddItemButtonView(addedItemCount: viewModel.itemCartCount,
-                                  onAddition: viewModel.addItem,
-                                  onRemove: viewModel.removeItem)
-            }
+            AddItemButtonView(addedItemCount: viewModel.itemCartCount,
+                              onAddition: viewModel.addItem,
+                              onRemove: viewModel.removeItem,
+                              defaultType: .plus)
+        } else {
+            EmptyView()
+        }
+    }
+    
+    @ViewBuilder func BottomAddButton() -> some View {
+        if viewModel.addButtonType == .bottom {
+            AddItemButtonView(addedItemCount: viewModel.itemCartCount,
+                              onAddition: viewModel.addItem,
+                              onRemove: viewModel.removeItem)
         } else {
             EmptyView()
         }
@@ -123,5 +112,15 @@ extension ItemView {
         } else {
             EmptyView()
         }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        CategoryDetailView(data: .init(id: "1",
+                                       image: "vegetable",
+                                       title: "Fresh Vegetable",
+                                       items: ["1","2","3","4","5","6","7","8","9"]))
+        .environment(Factory.shared.viewModel.instamart.getHomeViewModel())
     }
 }

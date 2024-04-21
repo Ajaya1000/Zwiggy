@@ -59,6 +59,8 @@
 		A5B07BF62BD38405001BFA1C /* InstamrtQuickPickRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B07BF52BD38405001BFA1C /* InstamrtQuickPickRepository.swift */; };
 		A5B07BF82BD38444001BFA1C /* InstamartQuickPickService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B07BF72BD38444001BFA1C /* InstamartQuickPickService.swift */; };
 		A5B07BFB2BD38461001BFA1C /* InstamartQuickPickLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B07BFA2BD38461001BFA1C /* InstamartQuickPickLocalService.swift */; };
+		A5B07BFF2BD42F3B001BFA1C /* AddItemButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B07BFE2BD42F3B001BFA1C /* AddItemButtonStyle.swift */; };
+		A5B07C012BD43933001BFA1C /* AddItemButtonViewDefaultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B07C002BD43933001BFA1C /* AddItemButtonViewDefaultType.swift */; };
 		A5B204A72BC12A4F002A2C72 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B204A62BC12A4F002A2C72 /* ViewModelFactory.swift */; };
 		A5B204A92BC12AA6002A2C72 /* InstamartViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B204A82BC12AA6002A2C72 /* InstamartViewModelFactory.swift */; };
 		A5B204AC2BC12F89002A2C72 /* InstamartViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B204AB2BC12F89002A2C72 /* InstamartViewModelProvider.swift */; };
@@ -133,6 +135,8 @@
 		A5B07BF52BD38405001BFA1C /* InstamrtQuickPickRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamrtQuickPickRepository.swift; sourceTree = "<group>"; };
 		A5B07BF72BD38444001BFA1C /* InstamartQuickPickService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamartQuickPickService.swift; sourceTree = "<group>"; };
 		A5B07BFA2BD38461001BFA1C /* InstamartQuickPickLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamartQuickPickLocalService.swift; sourceTree = "<group>"; };
+		A5B07BFE2BD42F3B001BFA1C /* AddItemButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemButtonStyle.swift; sourceTree = "<group>"; };
+		A5B07C002BD43933001BFA1C /* AddItemButtonViewDefaultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemButtonViewDefaultType.swift; sourceTree = "<group>"; };
 		A5B204A62BC12A4F002A2C72 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		A5B204A82BC12AA6002A2C72 /* InstamartViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamartViewModelFactory.swift; sourceTree = "<group>"; };
 		A5B204AB2BC12F89002A2C72 /* InstamartViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamartViewModelProvider.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 		A531AEA62B629A7C006DABBE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5B07BFD2BD42F2F001BFA1C /* AddItemButtonView */,
 				A5B07BF22BD3819B001BFA1C /* QuickPickView */,
 				A54E9CB32BC10A7200694767 /* ItemView */,
 				A531AF432B6824AA006DABBE /* CartBottomStickyView */,
@@ -252,7 +257,6 @@
 				A531AF3D2B64C497006DABBE /* Category */,
 				A5DB6EB42B6CD31400F1EFA6 /* NavHeaderView.swift */,
 				A5DB6EB72B6CD53000F1EFA6 /* CartItemView.swift */,
-				A5DB6EB92B6CD90A00F1EFA6 /* AddItemButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,6 +422,16 @@
 				A5B07BFA2BD38461001BFA1C /* InstamartQuickPickLocalService.swift */,
 			);
 			path = InstamartQuickPickService;
+			sourceTree = "<group>";
+		};
+		A5B07BFD2BD42F2F001BFA1C /* AddItemButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				A5B07C002BD43933001BFA1C /* AddItemButtonViewDefaultType.swift */,
+				A5B07BFE2BD42F3B001BFA1C /* AddItemButtonStyle.swift */,
+				A5DB6EB92B6CD90A00F1EFA6 /* AddItemButtonView.swift */,
+			);
+			path = AddItemButtonView;
 			sourceTree = "<group>";
 		};
 		A5B204A52BC12554002A2C72 /* ViewModelFactory */ = {
@@ -672,6 +686,7 @@
 				A58610D92BC51B2E007EFAD3 /* InstamartRepositoryFactory.swift in Sources */,
 				A58610C82BC4585C007EFAD3 /* SectionLabelStyle.swift in Sources */,
 				A5B204BF2BC1403D002A2C72 /* InstamartServiceFactory.swift in Sources */,
+				A5B07C012BD43933001BFA1C /* AddItemButtonViewDefaultType.swift in Sources */,
 				A531AEA52B61886A006DABBE /* SubtitleModifier.swift in Sources */,
 				A5FFEE092B7256E000FF566C /* Screen.swift in Sources */,
 				A58610C12BC4476C007EFAD3 /* InstamartSectionService.swift in Sources */,
@@ -688,6 +703,7 @@
 				A58610E02BC51F83007EFAD3 /* InstamartLocalCartService.swift in Sources */,
 				A58610C62BC45480007EFAD3 /* TemplateSection.swift in Sources */,
 				A531AEAE2B629E47006DABBE /* CardModifier.swift in Sources */,
+				A5B07BFF2BD42F3B001BFA1C /* AddItemButtonStyle.swift in Sources */,
 				A5B204CF2BC284D4002A2C72 /* InstamartCartService.swift in Sources */,
 				A531AEB02B62D633006DABBE /* AdsCategoriesView.swift in Sources */,
 				A531AEAB2B629B0C006DABBE /* InstamartViewModel.swift in Sources */,

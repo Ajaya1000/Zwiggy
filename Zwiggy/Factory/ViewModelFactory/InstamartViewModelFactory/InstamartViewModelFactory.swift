@@ -16,6 +16,11 @@ class InstamartViewModelFactory {
 }
 
 extension InstamartViewModelFactory: InstamartViewModelProvider {
+    func getQuickPickViewModel() -> QuickPickViewModel {
+        let repository = repositoryProvider.getQuickPickRepository()
+        return QuickPickViewModel(repository: repository)
+    }
+    
     func getHomeViewModel() -> InstamartViewModel {
         
         return InstamartViewModel(repository: repositoryProvider.getHomeRepository())

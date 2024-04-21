@@ -18,8 +18,8 @@ struct CategoryDetailView: View {
             LazyVGrid(columns: columns, spacing: 1.0) {
                 ForEach(viewModel.getItem(for: data.items)) { item in
                     ItemView(viewModel: Factory.shared.viewModel.instamart.getItemViewModel(with: item,
-                                                                                            addButtonType: .top))
-                    .padding(24.0)
+                                                                                            addButtonType: .bottom))
+                    .padding(8.0)
                     .background(.white)
                 }
             }
